@@ -2,7 +2,7 @@
   "name": "team-profiles",
   "version": "1.0.0",
   "description": "Team Profile Generator using OOP",
-  "main": "index.js",
+  "main": "./index.js",
   "directories": {
     "lib": "lib"
   },
@@ -24,7 +24,9 @@
   "homepage": "https://github.com/depotte6/Team-Profiles#readme",
   "dependencies": {
     "inquirer": "^8.1.2",
-      "jshint": "^2.13.0"
-    }
-  
+    "jshint": "^2.13.0"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
 }
