@@ -6,4 +6,11 @@ describe("Intern", () => {
         const Int = new Intern("Foo", 1, "test@test.com", testValue);
         expect(Int.school).toBe(testValue);
     });
+
+    describe("getRole() returns 'Intern'", () => {
+        const testValue = "Intern";
+        const Int = new Intern("Foo", 1, "test@test.com", "MSU");
+        expect(Int.getRole()).toBe(testValue);
+    });
+
 });
