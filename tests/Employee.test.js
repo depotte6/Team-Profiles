@@ -5,6 +5,8 @@ describe("Employee", () => {
         const Emp = new Employee();
         expect(Emp).toBe("name");
 
-    })
+    });
 
-}
+
+
+});

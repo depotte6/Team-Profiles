@@ -4,4 +4,4 @@ describe("Intern", () => {
     it("can add new intern", () => {
         const Int = new Intern();
     })
-})
+});
