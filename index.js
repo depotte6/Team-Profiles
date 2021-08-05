@@ -124,10 +124,17 @@ function buildTeam() {
                             });
                         }
 
-                            if (teamAnswer.employee === "I don't have any more memebers to add.") { 
-                            const HTML = generate(Employees);
-  
-                        }
                     });
+
+                    if (teamAnswer.employee === "I don't have any more memebers to add.") { 
+                        writeHTML();
+                }
+                function writeHTML() {
+                    let html = render(employees);
+
+                    fs.writeFile(outPath, html => {
+                        console.log("sucess!");
+                    });
+                }
                  
         }    });}
