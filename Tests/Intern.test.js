@@ -1,17 +1,21 @@
 const Intern = require("../lib/Intern");
 const Employee = require("../lib/Employee");
 
-describe("Intern", () => {
-    it("can add school with constructor", () => {
-        const testValue = "MSU";
-        const Int = new Intern("Foo", 1, "test@test.com", testValue);
-        expect(Int.school).toBe(testValue);
-    });
 
-    describe("getRole() returns 'Intern'", () => {
-        const testValue = "Intern";
-        const Int = new Intern("Foo", 1, "test@test.com", "MSU");
-        expect(Int.getRole()).toBe(testValue);
-    });
+test("can add school with constructor", () => {
+    const testValue = "MSU";
+    const e = new Intern("Foo", 50, "test@test.com", testValue);
+    expect(e.school).toBe(testValue);
+});
 
+test("getSchool() returns school", () => {
+    const testValue = "MSU";
+    const e = new Intern("Foo", 50, "test@test.com", "MSU");
+    expect(e.getSchool()).toBe(testValue);
+});
+
+test("getRole() returns 'Intern'", () => {
+    const testValue = "Intern";
+    const e = new Intern("Foo", 50, "test@test.com", "MSU");
+    expect(e.getRole()).toBe(testValue);
 });
