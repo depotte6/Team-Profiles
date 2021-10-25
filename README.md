@@ -29,4 +29,8 @@ THEN I exit the application, and the HTML is generated
 ```
 ![Screen Shot 2021-10-24 at 9 34 21 PM](https://user-images.githubusercontent.com/83424339/138622064-2e98ed78-c48a-40da-a152-5822c338228c.png)
 
-![Screen Shot 2021-10-24 at 9 33 08 PM](https://user-images.githubusercontent.com/83424339/138622012-7b533c1f-ac84-444c-96fb-7febd839ac13.png)
+![Screen Shot 2021-10-24 at 9 33 08 PM](https[Screen Recording 2021-10-24 at 9.54.43 PM 2.zip](https://github.com/depotte6/Team-Profiles/files/7406748/Screen.Recording.2021-10-24.at.9.54.43.PM.2.zip)
+://user-images.githubusercontent.com/83424339/138622012-7b533c1f-ac84-444c-96fb-7febd839ac13.png)
+
+
+
