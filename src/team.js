@@ -1,37 +1,36 @@
+const html = [];
+
 const generateTeam = team => {
 
-    const generateManager = manager => {
+const generateManager = manager => {
         return `
-            <div class="card">
-                <div class="card-header">
-                 <div class = "card heading"></div>
-                    ${manager.getName()}
-                </div>
-            <div class="cardrole">
-                {role}}
-                </div>
+        <div class="card">
+            <div class="card-header">
+                <h1 class = "card-title" id ="name">${manager.getName()}</h1>
+                <h2 class="card-title" id="role">${manager.getRole()}</h2>
             </div>
         <div class="card-body">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${manager.getID()}</li>
-                <li class="list-group-item">Email: <a href=${manager.getEmail()}}></a></li>
-                <li class="list-group-item">Office Number: ${manager.getNumber()}}></a> </li>
+                <li class="list-group-item">Email: ${manager.getEmail()}</li>
+                <li class="list-group-item">Office Number: ${manager.getNumber()}</a> </li>
             </ul>
         </div>
-        </div>`;
-        }
+        </div>`
+        
+    }
     const generateEngineer = engineer => {
         return `
         <div class="card">
             <div class="card-header">
                 <h1 class="card-title">${engineer.getName()}</h1>
-                <h2 class="card-title">${engineer.role}</h2>
+                <h2 class="card-title">${engineer.getRole()}</h2>
             </div>
         <div class="card-body">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${engineer.getID()}</li>
-                <li class="list-group-item">Email: <a href=${engineer.getEmail()}></a></li>
-                <li class="list-group-item">GitHub: <a href="http:///github.com/" + ${engineer.getGitHub}></a> </li>
+                <li class="list-group-item">Email: ${engineer.getEmail()}</li>
+                <li class="list-group-item">GitHub: ${engineer.getGitHub()} </li>
              </ul>
         </div>
         </div>`
@@ -46,18 +45,18 @@ const generateTeam = team => {
         <div class="card-body">
             <ul class="list-group">
                 <li class="list-group-item">ID: ${intern.getID()}</li>
-                <li class="list-group-item">Email: <a href=${intern.getEmail()}></li>
-                <li class="list-group-item">School: ${intern.getSchool()}></a> </li>
+                <li class="list-group-item">Email: ${intern.getEmail()}</li>
+                <li class="list-group-item">School: ${intern.getSchool()}</li>
             </ul>
         </div>
     </div>
         `
     }
 
-    const html = [];
+ 
     html.push(team
         .filter(employee=> employee.getRole() === "Manager")
-        .map(manager => generaterManager(manager))
+        .map(manager => generateManager(manager))
     );
     html.push(team
         .filter(employee => employee.getRole() === "Engineer")
@@ -78,34 +77,33 @@ module.exports = team => {
     <html lang="en">
     
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href = "style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-        <title>Team-Profile</title>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>My Team</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/c502137733.js"></script>
     </head>
     
     <body>
         <div class="container-fluid">
             <div class="row">
-                <div class="column-12">
-                    <h1 class="text-center">Meet My Team</h1>
-                    <h2>
-                        {{teamName}}
-                    </h2>
-                </div>
-            </div>
-            <div class="containter">
-                <div class="row">
-                    <div class="column-12">
-                        ${generateTeam(team)}
+                <div class="col-12 jumbotron mb-3 team-heading">
+                    <h1 class="text-center">My Team</h1>
                 </div>
             </div>
         </div>
-    
+        <div class="container">
+            <div class="row">
+                <div class="team-area col-12 d-flex justify-content-center">
+                    ${generateTeam(team)}
+                </div>
+            </div>
+        </div>
     </body>
     </html>
-    `
-}
-
+        `;
+    };
+    

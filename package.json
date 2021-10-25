@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/depotte6/Team-Profiles#readme",
   "dependencies": {
-    "expree": "^0.1.6",
+    "express": "^0.1.6",
     "inquirer": "^8.1.2",
     "jshint": "^2.13.0",
     "path": "^0.12.7"

@@ -38,7 +38,7 @@ test("can add email with constructor", () => {
 test("getEmail() returns email", () => {
     const testValue = "test@test.com";
     const e = new Employee("Mary", 50, testValue);
-    expect(e.getemail()).toBe(testValue);
+    expect(e.getEmail()).toBe(testValue);
 });
 
 test("getRole() returns 'Employee'", () => {

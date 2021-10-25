@@ -1,23 +1,20 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const jest = require("jest");
 const path = require('path');
 
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
-let manager;
+
 
 const OUTPUT_DIR = path.resolve(__dirname, "output")
-const outputPath = path.join(OUTPUT_DIR, "main.html");
-const { render } = require('./lib/render');
+const outputPath = path.join(OUTPUT_DIR, "team.html");
+const render = require("./src/team.js");
+const teamMembers = [];
 
-const teamMembersArray = [];
-welcome();
 
 function welcome() {
 
-createManager();
         function createManager() {
             console.log("Welcome! Begin to build your team");
             inquirer.prompt([
@@ -49,9 +46,9 @@ createManager();
                     }
                 ])
                 .then(answers => {
-                    manager = new Manager(answers.managerName, answers.managerID, answers.managerEmail, answers.officeNumber);
+                    const manager = new Manager(answers.managerName, answers.managerID, answers.managerEmail, answers.officeNumber);
                     console.log(manager);
-                    teamMembersArray.push(manager);
+                    teamMembers.push(manager);
                     addTeamMembers();
                 });
         };
@@ -116,7 +113,7 @@ createManager();
             .then(answers => {
                 const engineer = new Engineer(answers.engineerName, answers.engineerID, answers.engineerEmail, answers.engineerGitHub);
                 console.log(engineer);
-                teamMembersArray.push(engineer);
+                teamMembers.push(engineer);
                 addTeamMembers();
             });
         };
@@ -148,7 +145,7 @@ createManager();
             .then(answers => {
                 const intern = new Intern(answers.internName, answers.internID, answers.internEmail, answers.internSchool);
                 console.log(intern);
-                teamMembersArray.push(intern);
+                teamMembers.push(intern);
                 addTeamMembers();
             });
        
